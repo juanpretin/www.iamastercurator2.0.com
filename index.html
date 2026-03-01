@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA MasterCurator | Por Juan Pequeno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* RESET E CONFIGURAÇÕES BÁSICAS */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #0b0f19; 
+            color: #fff; 
+            overflow-x: hidden; 
+            scroll-behavior: smooth;
+        }
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(17, 17, 17, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(79, 172, 254, 0.2);
+        }
+
+        header .logo { font-weight: 800; font-size: 1.5rem; color: #4facfe; }
+        nav a { margin-left: 20px; font-weight: 500; color: #ccc; transition: 0.3s; text-decoration: none; }
+        nav a:hover { color: #4facfe; }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 { font-size: 3rem; color: #4facfe; margin-bottom: 20px; max-width: 800px; }
+        .hero p { color: #aaa; font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; }
+
+        /* GRID DE FERRAMENTAS */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            color: #4facfe;
+            margin: 40px 0 20px;
+            border-left: 4px solid #00f2fe;
+            padding-left: 15px;
+        }
+
+        .grid-ias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(79, 172, 254, 0.05);
+            border-color: #4facfe;
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.2);
+        }
+
+        .card h3 { margin-bottom: 10px; font-size: 1.4rem; }
+        .card p { font-size: 0.9rem; color: #bbb; margin-bottom: 20px; line-height: 1.5; }
+
+        .btn-acessar {
+            background: linear-gradient(90deg, #00f2fe, #4facfe);
+            color: #000;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-acessar:hover { opacity: 0.9; transform: scale(1.02); }
+
+        /* FOOTER COM CRÉDITOS */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .credito-nome {
+            color: #4facfe;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 10px;
+            display: block;
+        }
+
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<header>
+    <div class="logo">IA MasterCurator</div>
+    <nav>
+        <a href="#texto">Texto</a>
+        <a href="#imagem">Imagens</a>
+        <a href="#video">Vídeo/Áudio</a>
+        <a href="#produtividade">Produtividade</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>O Hub Definitivo de Inteligência Artificial</h1>
+    <p>Acesso gratuito às melhores ferramentas de IA para potencializar seu trabalho e estudos.</p>
+</section>
+
+<div class="container">
+    
+    <h2 class="category-title" id="texto">Geração de Texto e Pesquisa</h2>
+    <div class="grid-ias">
+        <div class="card">
+            <h3>ChatGPT</h3>
+            <p>A IA mais popular da OpenAI para conversas, códigos e criação de conteúdo.</p>
+            <a href="https://chat.openai.com" target="_blank" class="btn-acessar">Acessar Grátis</a>
+        </div>
+        <div class="card">
+            <h3>Claude.ai</h3>
+            <p>Excelente para análise de textos longos e escrita com tom mais humano.</p>
+            <a href="https://claude.ai" target="_blank" class="btn-acessar">Acessar Grátis</a>
+        </div>
+        <div class="card">
+            <h3>Perplexity AI</h3>
+            <p>Um buscador inteligente que cita fontes em tempo real para suas pesquisas.</p>
+            <a href="https://www.perplexity.ai" target="_blank" class="btn-acessar">Acessar Grátis</a>
+        </div>
+    </div>
+
+    <h2 class="category-title" id="imagem">Criação de Imagens e Arte</h2>
+    <div class="grid-ias">
+        <div class="card">
+            <h3>Leonardo.ai</h3>
+            <p>Geração de imagens de alta qualidade com diversos modelos gratuitos diariamente.</p>
+            <a href="https://leonardo.ai" target="_blank" class="btn-acessar">Acessar Grátis</a>
+        </div>
+        <div class="card">
+            <h3>Microsoft Designer</h3>
+            <p>Crie artes incríveis usando o DALL-E 3 de forma totalmente gratuita.</p>
+            <a href="https://designer.microsoft.com" target="_blank" class="btn-acessar">Acessar Grátis</a>
+        </div>
+        <div class="card">
+            <h3>SeaArt.ai</h3>
+            <p>Poderosa ferramenta baseada em Stable Diffusion com milhares de estilos.</p>
+            <a href="https://www.seaart.ai" target="_blank" class="btn-acessar">Acessar Grátis</a>
+        </div>
+    </div>
+
+    <h2 class="category-title" id="video">Vídeo, Voz e Áudio</h2>
+    <div class="grid-ias">
+        <div class="card">
+            <h3>ElevenLabs</h3>
+            <p>A melhor tecnologia de clonagem de voz e conversão de texto em fala.</p>
+            <a href="https://elevenlabs.io" target="_blank" class="btn-acessar">Acessar Grátis</a>
+        </div>
+        <div class="card">
+            <h3>Pika Labs</h3>
+            <p>Transforme descrições em vídeos curtos e animações impressionantes.</p>
+            <a href="https://pika.art" target="_blank" class="btn-acessar">Acessar Grátis</a>
+        </div>
+        <div class="card">
+            <h3>Suno AI</h3>
+            <p>Crie músicas completas com letra e voz a partir de um simples comando.</p>
+            <a href="https://suno.com" target="_blank" class="btn-acessar">Acessar Grátis</a>
+        </div>
+    </div>
+
+    <h2 class="category-title" id="produtividade">Produtividade</h2>
+    <div class="grid-ias">
+        <div class="card">
+            <h3>Gamma App</h3>
+            <p>Crie apresentações, sites e documentos inteiros em segundos com IA.</p>
+            <a href="https://gamma.app" target="_blank" class="btn-acessar">Acessar Grátis</a>
+        </div>
+        <div class="card">
+            <h3>Humata AI</h3>
+            <p>O "ChatGPT para seus PDFs". Faça perguntas diretamente para seus arquivos.</p>
+            <a href="https://www.humata.ai" target="_blank" class="btn-acessar">Acessar Grátis</a>
+        </div>
+        <div class="card">
+            <h3>Notion AI</h3>
+            <p>Organize suas notas e use IA para resumir e escrever dentro do seu workspace.</p>
+            <a href="https://www.notion.so" target="_blank" class="btn-acessar">Acessar Grátis</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 IA MasterCurator - Hub de Ferramentas Gratuitas.</p>
+    <span class="credito-nome">Criado por Juan Pequeno</span>
+    <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.5;">Distribuído gratuitamente no GitHub</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+    particlesJS('particles-js', {
+        "particles": {
+            "number": { "value": 60 },
+            "color": { "value": "#4facfe" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.3 },
+            "size": { "value": 2 },
+            "line_linked": { "enable": true, "distance": 150, "color": "#4facfe", "opacity": 0.2, "width": 1 },
+            "move": { "enable": true, "speed": 1.5 }
+        },
+        "interactivity": {
+            "events": { "onhover": { "enable": true, "mode": "grab" } }
+        }
+    });
+</script>
+
+</body>
+</html>
